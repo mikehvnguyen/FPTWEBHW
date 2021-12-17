@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo JS</title>
+</head>
+<body>
+<script type="text/javascript">
+  // code js tại đây
+  var x; // khai báo biến bên js - dynamic datatype
+  // number
+  // string
+  // array
+  // object
+  // function
+  x = 10; // x la 1 Number
+  x = x + 5;// 15
+  console.log(x);
+  var y = "Xin chao cacs ban";
+  console.log(y);
+  y = x + y; // ghép chuỗi 15+ xin chao cacs ban => 15xin chao cacs ban
+  console.log(y);
+  /*
+      number + numbe => number
+      number + string => string
+      string + string => string
+   */
+  console.log("Gia tri cua x= "+x);
+  if(x > 10){
+
+  }else{
+
+  }
+  for(var i=0;i<10;i++){
+    console.log("Hello world!");
+  }
+
+  var arr = [];// không cần nói rõ kieur dữ liệu và kích thước
+  arr[0] = 1;
+  arr[1] = "xin chao";
+  arr[2] = [];
+  arr[2][0] = 15;
+  arr[2][1] = "t2110e";
+  arr[2][2]= [1,2,3,4];
+  arr[3] = 10;
+  // độ sâu của array tùy ý
+  // => cấu trúc cây dữ liệu của mảng phải đc kiểm soát rõ ràng, ổn định
+  var n= 1217;
+  var count = 0;
+  for(var i=2;i<=n/2;i++){
+    if(n%i==0) {
+      count++;
+      break;
+    }
+  }
+  if(count>0){
+    console.log(n+" khong phai so nguyen to");
+  }else{
+    console.log(n +" la so nguyen to");
+  }
+  var ary = [3,12,9,90,1,0,15,29];
+  // sap xep theo thu tu tang dan
+  for(var i=0;i<ary.length-1;i++){
+    for(var j=0;j<ary.length-i-1;j++){
+      if(ary[j]> ary[j+1]){
+        var tmp = ary[j];
+        ary[j]= ary[j+1];
+        ary[j+1] = tmp;
+      }
+    }
+  }
+  console.log("sau khi sap xep: "+ary);// console.log ko phải print, thực ra nó là 1 dạng của debug (dump)
+  // them 1 gia tri vao mang
+  ary[ary.length] = 159;// ary[8]=159;
+  console.log("Sau khi them 159: "+ary);
+  // hay dung
+  ary.push(255);
+  console.log("Sau khi them 255: "+ary);
+  console.log(ary);
+
+  // function
+  function TinhTong(a,b){
+    return a+b;
+  }
+  var c = TinhTong(5,6);
+  console.log("c = "+c);
+  var d = TinhTong("xin chao","moi nguoi");
+  console.log(d);
+  InMenu();// chỉ cần nằm cùng script
+  function InMenu(){
+    console.log("Menu:");
+    console.log("1. Food");
+  }
+  // alert("Cấm trẻ em dưới 18 tuổi truy cập website!"); // void
+  // var kq = confirm("Are you sure?"); // return boolean
+  // console.log(kq);
+  //  var p = prompt("Bạn bao nhiêu tuổi?"); // return string
+  // convert to number
+  //  p = parseInt(p); // convert string to int  // parseFloat
+  // 18 -> 18
+  // 18abc -> 18
+  // 1ab8c -> 1
+  // a18bc -> NaN : not a number
+  //   console.log(p + 10);// nhap vapo 18 -> 28
+  // nhap vao 2 so nguyen, tim UCLN va BCNN cua 2 so do
+  // var n1 = prompt("Nhap so thu nhat:");
+  // n1 = parseInt(n1);
+  // var n2 = prompt("Nhap so thu 2");
+  // n2 = parseInt(n2);
+  // for(var i=n1;i>=1;i--){
+  //     if(n1%i==0 && n2%i==0){
+  //         console.log("UCLN: "+i);
+  //         break;
+  //     }
+  // }
+  // for(var i=n1;true;i++){
+  //     if(i%n1==0 && i%n2==0){
+  //         console.log("BCNN: "+i);
+  //         break;
+  //     }
+  // }
+  // // yeu cau phai nhap 1 so nguyen
+  // var n;
+  // do{
+  //     n = prompt("Nhap 1 so nguyen duong");
+  //     n = parseInt(n);
+  // }while (isNaN(n) || n<=0); // n==NaN
+
+  // nhap vao 3 so la 3 canh cua 1 tam giac, sau do tinh chu vi va dien tich
+  // căn bậc 2: Math.sqrt()
+</script>
+<script type="text/javascript" src="js/demo.js"></script>
+</body>
+</html>

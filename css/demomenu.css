@@ -1,0 +1,19 @@
+.menu .item{
+    position: relative;
+}
+.item .submenu{
+    float: left;
+    width: 180px;
+    position: absolute;
+    left: 0;
+    top:17px;
+    border: 1px solid #222222;
+    display: none;
+}
+.item .submenu li{
+    float: left;
+    width: 100%;
+}
+.item.active .submenu{
+    display: block;
+}

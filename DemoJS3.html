@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo JS 3</title>
+</head>
+<body>
+<h1 id="tit" class="x1 x2">Chính sách an sinh của TP HCM còn bị động</h1>
+<p id="para">Dịch diễn biến phức tạp khiến thành phố chưa chuẩn
+  bị kỹ kịch bản an sinh xã hội, nên quá trình thực hiện gặp nhiều hạn chế, bị động, theo Chủ tịch UBND thành phố.</p>
+<h2 class="x1" id="countdown">10</h2>
+<h2><span id="minute">00</span>:<span id="second">00</span></h2>
+<h2><span id="c-h">00</span>:<span id="c-m">00</span>:<span id="c-s">00</span></h2>
+<script type="text/javascript">
+  // cái mà chúng ta nhìn thấy ở 1 đối tướng ko phải là 1 đối tượng mà là các thông tin của đối tượng đó
+
+  // mong muốn: để chữ của h1 ban đầu màu đen, 10s sau mới chuyển sang màu đỏ
+  // tạo 1 đối tượng tham chiếu tương đương với phần tử có thẻ h1
+  // tác động vào đối tượng này để nó điều chỉnh thông tin hiển thị
+  setTimeout(function (){
+    // tao đối tượng tham chiếu
+    var h1obj = document.getElementById("tit"); // tạo ra 1 đối tượng ( đc lấy mẫu từ DOM ELEMENT)
+    h1obj.style.color = "red"; // style là thuộc tính tác động đến css
+    h1obj.style.fontSize = "30px";// css: font-size -> js: fontSize
+    h1obj.style.backgroundColor = "orange";
+
+    h1obj.innerText = "Chính sách an sinh của Hà Nội còn bị động";
+
+    h1obj.innerHTML = "<i>Chính sách an sinh của Hà Nội còn bị động</i>";
+
+    h1obj.classList.add("x3");
+
+    if(h1obj.classList.contains("x4")){
+      h1obj.classList.remove("x4");
+    }else{
+      h1obj.classList.add("x4");
+    }
+
+  },1000);
+  var num  = 10;
+  var cdx = setInterval(function () {
+    var cd = document.getElementById("countdown");
+    cd.innerText = num;
+    num--;
+    if(num < 0){
+      clearInterval(cdx);
+    }
+  },1000);
+
+  function timer(){
+    var m,s=0;
+    do{
+      m = parseInt(prompt("Nhập vào số phút cần đếm ngược"));
+    }while (isNaN(m) || m <=0);
+    var timer = setInterval(function () {
+      var minute = document.getElementById("minute");
+      var second = document.getElementById("second");
+      var min = m<10?"0"+m:m;
+      minute.innerText = min;
+      second.innerText = s>10?s:"0"+s;
+      s--;
+      if(s<0){
+        s=59;
+        m--;
+      }
+      if(m<0){
+        clearInterval(timer);
+      }
+    },1000);
+  }
+  // timer();
+
+  // var date = new Date();
+  // var hour = date.getHours();
+  // var mi = date.getMinutes();
+  // var sec = date.getSeconds();
+  // console.log(hour);
+  // console.log(mi);
+  // Digital clock   21:07:15
+  function clock(){
+    setInterval(function (){
+      var date = new Date(); // lấy thời gian ở đâu
+      document.getElementById("c-h").innerText =  date.getHours();
+      document.getElementById("c-m").innerText =  date.getMinutes();
+      document.getElementById("c-s").innerText =  date.getSeconds();
+    },1000);
+  }
+  clock();
+
+  // java desktop app -> mays tinhs (code client side - giờ theo client)
+  // java spring (web), php, asp.net -> giờ trên máy chủ thiết lập web (coe backend - server side - giờ sẽ là giờ server)
+
+  // document.getElementsByClassName
+  // document.getElementsByTagName
+  //document.querySelectorAll()
+
+  var hh2 = document.getElementsByTagName("h2"); // array (collection) các đối tượng
+  for(var i=0;i<hh2.length;i++){
+    hh2[i].style.color = "red";
+  }
+
+  var x1s = document.getElementsByClassName("x1");// array(collection) các object
+  for(var i=0;i<x1s.length;i++){
+    x1s[i].style.backgroundColor = "green";
+  }
+
+  var x2ss = document.querySelectorAll("h1.x2");// collection các object //gọi ra giống gọi trong css
+  for(var i=0;i<x2ss.length;i++){
+    x2ss[i].style.fontSize = "40px";
+  }
+  // Events js
+
+</script>
+</body>
+</html>

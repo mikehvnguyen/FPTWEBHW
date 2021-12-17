@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Event</title>
+  <link rel="stylesheet" href="css/demoevent.css"/>
+</head>
+<body>
+<div class="box" onmouseenter="hoverMe()" onmouseleave="outMe()"
+     onmouseover="hoverMe()" onmouseout="outMe()"
+>
+  <button type="button" onclick="clickListen()">Click me</button>
+</div>
+<form onsubmit="submitMe()" action="#" method="post">
+  <input onkeypress="writeMe()" type="text" name="x-name" placeholder="Enter here.."/><br/>
+  <input id="ud" onpaste="alert('paste');" onkeydown="keyDownMe(this)" onkeyup="keyupMe(this)" type="text" name="x-name" placeholder="Key up-down here.."/><br/>
+  <input id="ud2" oncopy="alert('copy');" oncut="alert('cut');" onkeydown="keyDownMe(this);writeMe();" onkeyup="keyupMe(this)" type="text" name="x-name" placeholder="Key up-down here.."/><br/>
+  <select name="gender" onchange="chooseGender(this)">
+    <option value="nam">Nam</option>
+    <option value="nu">Nữ</option>
+    <option value="khac">Khác</option>
+  </select>
+  <button type="submit">submit</button>
+</form>
+<script type="text/javascript">
+  function chooseGender(e){
+    console.log(e.value);
+  }
+  function submitMe(){
+    alert("Submit me");
+  }
+  function writeMe(){
+    console.log("Write me...");
+  }
+
+  function keyDownMe(u){ // Phát ra sự kiên khi nhấn phím xuông
+    console.log("Key down me:"+ u.value);
+  }
+  function keyupMe(u){
+    console.log("Key up me: "+u.value);
+  }
+
+  function clickListen(){ // listener
+    alert("bạn vừa click vào tui hả?");
+    alert("Tôi vui lắm..");
+  }
+  function hoverMe(){
+    console.log("Mouse entered me...");
+  }
+  function outMe(){
+    console.log("Mouse outed me...");
+  }
+</script>
+</body>
+</html>

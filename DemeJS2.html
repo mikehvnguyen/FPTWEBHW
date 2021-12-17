@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo JS 2</title>
+</head>
+<body>
+<script type="text/javascript">
+    // OOP - lập trình hướng đối tượng
+    // typescript
+    // đối tượng
+    // 1 dạng dữ liệu
+    // struct ( advance datatype)
+    // có 2 thứ: 1. thông tin (dữ liệu) --> thuôc tính
+    // 2. Phương thức (Hành vi) method -> trong code: nhìn như 1 function
+    var obj = {}; // khai baos 1 đối tượng rỗng  int x;
+    obj.name = "Lê Hữu Phước"; // x  = 10;
+    obj.telephpne = "0987654321";
+    obj.girlFriends = ["Vân Anh","Hiền","Tú"];
+    obj.run = function (){
+        alert("Phước xin chào các bạn!");
+    }
+
+    console.log(obj.name);// sử dụng thông tin
+    obj.run();// sử dụng phương thức ( hành vi)
+
+    // hoặc có thể tạo đối tượng như sau
+    var obj2 = {  // int x = 10;
+        name: "Bùi Như Lạc",
+        telephpne:"0123456789",
+        girlFriends:[],
+        run: function (){
+            alert(this.name+" xin chào các bạn!");
+            alert("Tôi có "+this.girlFriends.length+" bạn gái");
+        },
+        thichlamgithilam: function (){
+            this.run();
+            alert("Hello world!");
+        }
+    };
+
+    var obj3 = Object.create(obj2); // nhân bản đối tượng obj3 giống obj2
+    obj3.name = "Mai Huy Hoạt";
+    obj3.run();
+    obj2.name = "Đỗ Duy Anh";
+    obj2.girlFriends.push("Tú Anh");
+    obj2.run();
+</script>
+</body>
+</html>

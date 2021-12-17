@@ -1,0 +1,23 @@
+h1{
+    color: red;
+}
+p{
+    color:#222222; /* mã màu hexa - */
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400 ;/* 100-thin 300-light 400-normal 500-medium 600-semibold 700-bold 800-extra bold 900-black */
+    line-height: 1.5;/* 27px */
+    text-decoration: none ;/* underline line-through overline none */
+    text-transform: capitalize;/* none uppercase lowercase capitalize */
+    text-align: justify;/* left right center  justify*/
+    text-indent: 20px;
+    width: 800px;/* kích thước của khối */
+    background-color: #EEE8AA;
+}
+a{
+    color: rgb(55,177,20); /* mã màu RGB - red green blue */
+}
+body{
+    background-color: #FFC0CB;
+}
+/* class id */

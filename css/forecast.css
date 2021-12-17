@@ -1,0 +1,21 @@
+.forecast li{
+    float: left;
+    width: 260px;
+    height: 180px;
+    list-style: none;
+    border: 1px solid #478da0;
+    background-color: #91d2e580;
+    margin: 15px;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+}
+.forecast li .temp{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.forecast li img{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Popup</title>
+    <link rel="stylesheet" href="css/popup.css"/>
+</head>
+<body>
+<div id="bg-fade" onclick="closePop()" class="bg-fade"></div>
+<div id="popup" class="popup">
+    <a class="closePop" href="#" onclick="closePop()">X</a>
+</div>
+<button type="button" onclick="popup()">Popup</button>
+<script type="text/javascript">
+    function popup(){
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("bg-fade").style.display = "block";
+    }
+    function closePop(){
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("bg-fade").style.display = "none";
+    }
+</script>
+</body>
+</html>
